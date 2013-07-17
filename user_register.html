@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Aprendo a ahorrar</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script type="text/javascript" charset="utf-8" src="js/jquery.mobile/jquery-1.7.2.min"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/cordova-2.5.0.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/phpjs/md5.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/toast.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/spinners/spinners.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/api/connection.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/storage.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/geolocation.js"></script>
+
+        <!-- Propio -->
+        <script type="text/javascript" charset="utf-8" src="js/register.js"></script>
+
+    </head>
+    <body>
+        <div class="header"><a onclick="navigator.app.loadUrl('http://www.aprendoaahorrar.com/', {openExternal: true});"><span class="left">aprendoa<strong>ahorrar</strong>.com</span></a><span class="right"><a onclick="go_('user_login.html');" data-localize="login">Iniciar sesión</a></span></div>
+        <div class="content" style="padding-bottom: 0px;">
+            <div class="cloud2"></div>
+            <div class="cloud1"></div>
+            <a onclick="go_('init.html');" class="back" ><div class="arrow"></div> Volver</a><br />
+            <div class="conte" id="register">
+                <form action="javascript:void(0);" method="POST">
+                    <div id="invalid_reg"></div>
+                    <input type="text" id="username" data-localize="username" required placeholder="Nombre de Usuario" class="first_box" >
+                    <input type="email" id="email" data-localize="email" required placeholder="Correo Electrónico" >
+                    <input type="password" id="password" required placeholder="Contraseña" class="last_box">
+                    <input type="hidden" id="country">
+                    <div id="invalid_data"></div>
+                    <p><input type="button" value="Crear Cuenta" onclick="register();" id="btn_register" data-localize="register"></p>
+                    <p><a href="" data-localize="terms_use">Terminos de Uso</a> | <a href="" data-localize="others">Otros</a></p>
+
+                </form>
+            </div>
+        </div>
+        <div id='spinner'><!-- spinner will go here --></div>
+        <div id="toast" style="opacity: 0;"></div>
+    </body>
+</html>

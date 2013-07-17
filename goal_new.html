@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Aprendo a ahorrar</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script type="text/javascript" charset="utf-8" src="js/jquery.mobile/jquery-1.7.2.min"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/cordova-2.5.0.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/toast.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/phpjs/md5.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/phpjs/base64.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/phpjs/strrev.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/spinners/spinners.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/api/connection.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/storage.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/notification.js"></script>
+
+        <!-- Propio -->
+        <script type="text/javascript" charset="utf-8" src="js/saving.js"></script>
+
+    </head>
+    <body>
+        <div class="header"><a onclick="navigator.app.loadUrl('http://www.aprendoaahorrar.com/', {openExternal: true});"><span class="left">aprendoa<strong>ahorrar</strong>.com</span></a><span class="right" id="loadname"></span></div>
+        <div class="menu_up">
+            <ul>
+                <li onclick="go_('user_profile.html');">Perfil</li>
+                <li onclick="">Acerca de</li>
+                <li onclick="session_kill();">Cerrar Sesión</li>                 <li>                     <input id="1" type="checkbox" class="css-checkbox" />                     <label for="1" class="css-label lite-green-check">Notificación</label>                 </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="cloud2"></div>
+            <div class="cloud1"></div>
+            <a onclick="go_('goal_list.html');" class="back" ><div class="arrow"></div> Volver</a>
+            <div class="conte">
+                <div id="new_plan">
+
+                    <form action="javascript:void(0);" method="get">
+                        <div id="invalid_saving"></div>
+                        <label class="sel">
+                            <select name="saving_type" id="saving_type">
+                                <option disabled selected value="0">Selecciona tu meta</option>
+                                <option value="1">Vivienda</option>
+                                <option value="2">Educación</option>
+                                <option value="3">Proyecto Personal</option>
+                            </select>
+                        </label>
+                        <input type="text" id="saving_name" required placeholder="Nombra tu meta" />
+                        <input type="number" id="saving_value" required />
+                        <label class="sel">
+                            <select name="saving_long" id="saving_long">
+                                <option disabled selected value="0">¿En cuánto tiempo?</option>
+                                <option value="1">1 año</option>
+                                <option value="2">2 años</option>
+                                <option value="3">3 años</option>
+                                <option value="4">4 años</option>
+                                <option value="5">5 años</option>
+                                <option value="6">6 años</option>
+                                <option value="7">7 años</option>
+                                <option value="8">8 años</option>
+                                <option value="9">9 años</option>
+                                <option value="10">10 años</option>
+                                <option value="11">11 años</option>
+                                <option value="12">12 años</option>
+                                <option value="13">13 años</option>
+                                <option value="14">14 años</option>
+                                <option value="15">15 años</option>
+                                <option value="16">16 años</option>
+                                <option value="17">17 años</option>
+                                <option value="18">18 años</option>
+                                <option value="19">19 años</option>
+                                <option value="20">20 años</option>
+                            </select>
+                        </label>
+                        <input type="number" id="return" required />
+                        <!--Rentabilidad para <strong><span id="return_country"></span></strong> es del <strong><span id="annual_return"></span>%</strong> anual.-->
+                        <p><input type="button" style="font-size: 15px;" onclick="calculate_monthly();" value="Calcular monto mensual" id="btn_saving" ></p>
+                    </form>
+                </div>
+                <div id="succes_plan">
+                    <h1 id="titlename">Estimado Usuario, </h1>
+                    <!--<p><strong>Debes ahorrar mensualmente $<span id="s_payment_value"></span></strong></p>-->
+                    <p>Para alcanzar tu meta de $<span id="s_value"></span> en <span id="s_time"></span> año(s), con rentabilidad del <span id="s_return"></span>% anual, debes ahorrar mensualmente $<span id="s_payment_value"></span>.
+                        <!--<p>
+                            <input id="1" type="checkbox" class="css-checkbox" />
+                            <label for="1" class="css-label lite-green-check">Notificación</label>
+                        </p>-->
+                        <br />
+                    <p><input type="button" value="Guardar meta" onclick="save_goal();"></p>
+                    <p><input type="button" value="Editar meta" onclick="edit_goal();"></p>
+                </div>
+
+                <div id="shared_goal" style="display:none;">
+                    <hr />
+                    <h2>Meta Compartida</h2>
+                    <p>
+                        <label>ID del Ahorro:</label>
+                        <span>Agrega aquí el ID de la meta que tu amigo te compartió.</span>
+                        <input type="number" id="id_goal" required />
+                    </p>
+                    <p><input type="button" value="Buscar Ahorro" onclick="search_goal();"></p>
+                </div>
+                <div id="info_shared"></div>
+            </div>
+        </div>
+        <div class="menu">
+            <span class="act"><a onclick="go_('goal_list.html');"><img src="images/metas-over.png" />Mis metas</a></span>
+            <span><a onclick="go_('blog_tips.html');"><img src="images/tips.png" />Tips</a></span>
+            <span><a onclick="go_('blog_news.html');"><img src="images/blog.png" />Blog</a></span>
+            <span><a onclick="share_menu();"><img src="images/compartir.png" />Compartir App</a></span>
+            <span><a onclick="qualify();"><img src="images/calificar_des.png" />Calificar</a></span>
+        </div>
+        <!-- Menu (outside mobile framework) -->
+        <div id="share">
+            <div class="clo" onclick="share_menu();">
+                <span class="fontawesome-double-angle-down"></span>
+            </div>
+            <ul class="dos_columnas">
+                <li><a onclick="share_twitter();"><span class="fontawesome-twitter-sign" style="color: #4099FF;"></span>Twitter</a></li>
+                <li><a onclick="share_facebook();"><span class="fontawesome-facebook-sign" style="color: #3B5998;"></span>Facebook</a></li>
+                <li><a onclick="search_phone();"><span class="fontawesome-phone-sign" style="color: #FFBF00;"></span>Contactos Teléfono</a></li>
+                <li><a onclick="share_email();"><span class="fontawesome-envelope-alt" style="color: #C92922;"></span>Correo Electrónico</a></li>
+            </ul>
+            <ul class="cloios">
+                <li class="cancelios" style="color: white;" onclick="share_menu();">Cancelar</li>
+            </ul>
+        </div>
+        <div id='spinner'><!-- spinner will go here --></div>
+        <div id="toast" style="opacity: 0;"></div>
+    </body>
+</html>

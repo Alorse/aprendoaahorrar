@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Aprendo a ahorrar</title>
+
+        <link rel="stylesheet" href="js/jquery.mobile/jquery.mobile-1.1.0.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script type="text/javascript" charset="utf-8" src="js/jquery.mobile/jquery-1.7.2.min"></script>
+        <script type="text/javascript" charset="utf-8" src="js/jquery.mobile/jquery.mobile-1.1.0.min.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/cordova-2.5.0.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/toast.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/spinners/spinners.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/api/connection.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/storage.js"></script>
+
+        <!-- Propio -->
+        <script type="text/javascript" charset="utf-8" src="js/api/contacts.js"></script>
+
+    </head>
+    <body>
+        <div class="header"><a onclick="navigator.app.loadUrl('http://www.aprendoaahorrar.com/', {openExternal: true});"><span class="left">aprendoa<strong>ahorrar</strong>.com</span></a><span class="right" id="loadname"></span></div>
+        <div class="menu_up">
+            <ul>
+                <li onclick="go_('user_profile.html');">Perfil</li>
+                <li onclick="">Acerca de</li>
+                <li onclick="session_kill();">Cerrar Sesión</li>                 <li>                     <input id="1" type="checkbox" class="css-checkbox" />                     <label for="1" class="css-label lite-green-check">Notificación</label>                 </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="cloud2"></div>
+            <div class="cloud1"></div>
+            <a onclick="go_back();" class="back" ><div class="arrow"></div> Volver</a>
+            <div class="conte">
+                <h3>Buscar contacto</h3>
+                <form action="javascript:void(0);" method="POST">
+                    <input type="text" id="s_conta" placeholder="Nombre contacto" />
+                    <input type="submit" value="Buscar" onclick="scarb();" />
+                </form>
+                <div id="contacts-output"></div>
+            </div>
+        </div>
+        <div class="menu">
+            <span><a onclick="go_('goal_list.html');"><img src="images/metas_des.png" />Mis metas</a></span>
+            <span><a onclick="go_('blog_tips.html');"><img src="images/tips.png" />Tips</a></span>
+            <span><a onclick="go_('blog_news.html');"><img src="images/blog.png" />Blog</a></span>
+            <span class="act"><a onclick="share_menu();"><img src="images/compartir-over.png" />Compartir</a></span>
+            <span><a onclick="qualify();"><img src="images/calificar_des.png" />Calificar</a></span>
+        </div>
+        <br />
+        <!-- Menu (outside mobile framework) -->
+        <div id="share">
+            <div class="clo" onclick="share_menu();">
+                <span class="fontawesome-double-angle-down"></span>
+            </div>
+            <ul class="dos_columnas">
+                <li><a onclick="share_twitter();"><span class="fontawesome-twitter-sign" style="color: #4099FF;"></span>Twitter</a></li>
+                <li><a onclick="share_facebook();"><span class="fontawesome-facebook-sign" style="color: #3B5998;"></span>Facebook</a></li>
+                <li><a onclick="search_phone();"><span class="fontawesome-phone-sign" style="color: #FFBF00;"></span>Contactos Teléfono</a></li>
+                <li><a onclick="share_email();"><span class="fontawesome-envelope-alt" style="color: #C92922;"></span>Correo Electrónico</a></li>
+            </ul>
+            <ul class="cloios">
+                <li class="cancelios" style="color: white;" onclick="share_menu();">Cancelar</li>
+            </ul>
+        </div>
+        <div id='spinner'><!-- spinner will go here --></div>
+        <div id="toast" style="opacity: 0;"></div>
+    </body>
+</html>

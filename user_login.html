@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Aprendo a ahorrar</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script type="text/javascript" charset="utf-8" src="js/jquery.mobile/jquery-1.7.2.min"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/cordova-2.5.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/login.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/phpjs/md5.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/toast.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/spinners/spinners.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/api/connection.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/storage.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/geolocation.js"></script>
+
+    </head>
+    <body>
+        <div class="header"><a onclick="navigator.app.loadUrl('http://www.aprendoaahorrar.com/', {openExternal: true});"><span class="left">aprendoa<strong>ahorrar</strong>.com</span></a></div>
+        <div class="content log">
+            <br />
+            <br />
+            <br />
+            <br />
+            <div style="text-align: center;"><a onclick="navigator.app.loadUrl('http://www.sura.com/', {openExternal: true});"><img src="images/logo_sura.png" /></a></div>
+            <div class="conte" id="login" style="margin-top: 5px;">
+                <form action="javascript:void(0);" method="get" onsubmit="login();">
+                    <div id="invalid_login"></div>
+                    <input type="email" id="email" maxlength="50" data-localize="email" required placeholder="Correo Electrónico" class="first_box" >
+                    <input type="hidden" id="username" >
+                    <input type="hidden" id="country" >
+                    <input type="password" id="password" maxlength="32" required placeholder="Contraseña" class="last_box">
+
+                    <p><input type="submit" value="Ingresar" id="btn_login" data-localize="login"></p>
+                    <p><a href="#" onclick="go_('user_forgot.html');" data-localize="forgot_pass">¿Olvidaste la contraseña?</a> &bull; <a href="user_register.html" data-localize="register">Regístrate</a></p>
+
+                </form>
+            </div>
+        </div>
+        <div id='spinner'><!-- spinner will go here --></div>
+        <div id="toast" style="opacity: 0;"></div>
+    </body>
+</html>

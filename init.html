@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Aprendo a ahorrar</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script type="text/javascript" charset="utf-8" src="js/jquery.mobile/jquery-1.7.2.min"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/cordova-2.5.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/index.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/phpjs/md5.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/toast.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/spinners/spinners.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/register.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/api/fb/cdv-plugin-fb-connect.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/fb/facebook_js_sdk.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/fb/fb.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/tw/jsOAuth-1.3.6.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/tw/tw.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/api/connection.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/storage.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/geolocation.js"></script>
+
+    </head>
+    <body id="init">
+        <div class="header"><a onclick="navigator.app.loadUrl('http://www.aprendoaahorrar.com/', {openExternal: true});"><span class="left">aprendoa<strong>ahorrar</strong>.com</span></a><span class="right"><a onclick="go_('user_login.html');" data-localize="login">Iniciar sesión</a></span></div>
+        <div class="content" style="padding-bottom: 0px;">
+            
+            <div style="text-align: center;"><a onclick="navigator.app.loadUrl('http://www.sura.com/', {openExternal: true});"><img src="images/logo_sura.png" /></a></div>
+            <div class="conte">
+                <h2 style="text-align: center;">Aprendo a <strong>Ahorrar</strong></h2>
+                <p style="text-align: center;">
+                    <span class="description">Ahorrar es la manera más simple de alcanzar tus metas y de construir un futuro lleno de posibilidades.<br />Ingresa hoy y prepárate para cumplir tus sueños.</span>
+                </p>
+
+                <div id="invalid_reg"></div>
+                <input type="hidden" id="username" />
+                <input type="hidden" id="email" />
+                <input type="hidden" id="country" />
+                <input type="hidden" id="password" />
+
+                <p>
+                    <input type="button" value="Crear Cuenta" id="ibtn_register" onclick="go_('user_register.html');" data-localize="register">
+                </p>
+                <p>
+                    <a class="twitter-before"><span class="fontawesome-twitter"></span></a>
+                    <button class="twitter" id='startTwitter' onclick="tw_login();" data-localize="login_tw">Ingresar con Twitter</button>
+                </p>
+
+                <p>
+                    <a class="facebook-before"><span class="fontawesome-facebook"></span></a>
+                    <button class="facebook" id='startFacebook' onclick="fb_login();" data-localize="login_fb">Ingresar con Facebook</button>
+                </p>
+            </div>
+            <div id='spinner'><!-- spinner will go here --></div>
+            <div id="toast" style="opacity: 0;"></div>
+        </div>
+
+    </body>
+</html>

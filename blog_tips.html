@@ -1,0 +1,85 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Aprendo a ahorrar</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script type="text/javascript" charset="utf-8" src="js/jquery.mobile/jquery-1.7.2.min"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/cordova-2.5.0.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/api/connection.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/storage.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/spinners/spinners.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/toast.js"></script>
+
+        <!-- Propio -->
+        <script type="text/javascript" charset="utf-8" src="js/tips.js"></script>
+
+    </head>
+    <body>
+        <div class="header"><a onclick="navigator.app.loadUrl('http://www.aprendoaahorrar.com/', {openExternal: true});"><span class="left">aprendoa<strong>ahorrar</strong>.com</span></a><span class="right" id="loadname"></span></div>
+        <div class="menu_up">
+            <ul>
+                <li onclick="go_('user_profile.html');">Perfil</li>
+                <li onclick="">Acerca de</li>
+                <li onclick="session_kill();">Cerrar Sesión</li>                 <li>                     <input id="1" type="checkbox" class="css-checkbox" />                     <label for="1" class="css-label lite-green-check">Notificación</label>                 </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="tips">
+                <div class="cloud2"></div>
+                <div class="cloud1"></div>
+                <a onclick="go_('goal_list.html');" class="back" ><div class="arrow"></div> Volver</a>
+                <div class="conte">
+                    <h3>Tips</h3>
+                    <input id="vivienda" type="checkbox" class="css-checkbox" checked="checked">
+                    <label for="vivienda" class="css-label lite-green-check">Vivienda</label>
+                    <input id="estudio" type="checkbox" class="css-checkbox" checked />
+                    <label for="estudio" class="css-label lite-green-check">Educación</label>
+                    <input id="personal" type="checkbox" class="css-checkbox" checked />
+                    <label for="personal" class="css-label lite-green-check">Personal</label>
+                    <br />
+                    <div id="output_tips"></div>
+                </div>
+            </div>
+            <div id="tip">
+                <div class="cloud1"></div>
+                <a onclick="go_tips();" class="back" ><div class="arrow"></div> Volver a Tips</a>
+                <div class="conte">
+                    <div id="piece_tip"></div>
+                </div>
+                <a onclick="go_('blog_tips.html');" class="back" ><div class="arrow"></div> Volver a Tips</a>
+            </div>
+
+        </div>
+        <div class="menu">
+            <span><a onclick="go_('goal_list.html');"><img src="images/metas_des.png" />Mis metas</a></span>
+            <span class="act"><a onclick="go_('blog_tips.html');"><img src="images/tips-over.png" />Tips</a></span>
+            <span><a onclick="go_('blog_news.html');"><img src="images/blog.png" />Blog</a></span>
+            <span><a onclick="share_menu();"><img src="images/compartir.png" />Compartir App</a></span>
+            <span><a onclick="qualify();"><img src="images/calificar_des.png" />Calificar</a></span>
+        </div>
+        <!-- Menu (outside mobile framework) -->
+        <div id="share">
+            <div class="clo" onclick="share_menu();">
+                <span class="fontawesome-double-angle-down"></span>
+            </div>
+            <ul class="dos_columnas">
+                <li><a onclick="share_twitter();"><span class="fontawesome-twitter-sign" style="color: #4099FF;"></span>Twitter</a></li>
+                <li><a onclick="share_facebook();"><span class="fontawesome-facebook-sign" style="color: #3B5998;"></span>Facebook</a></li>
+                <li><a onclick="search_phone();"><span class="fontawesome-phone-sign" style="color: #FFBF00;"></span>Contactos Teléfono</a></li>
+                <li><a onclick="share_email();"><span class="fontawesome-envelope-alt" style="color: #C92922;"></span>Correo Electrónico</a></li>
+            </ul>
+            <ul class="cloios">
+                <li class="cancelios" style="color: white;" onclick="share_menu();">Cancelar</li>
+            </ul>
+        </div>
+        <div id='spinner'><!-- spinner will go here --></div>
+        <div id="toast" style="opacity: 0;"></div>
+    </body>
+</html>

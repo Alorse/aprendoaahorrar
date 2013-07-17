@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width" />
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+        <title>Aprendo a ahorrar</title>
+
+        <link rel="stylesheet" href="css/style.css" />
+
+        <script type="text/javascript" charset="utf-8" src="js/jquery.mobile/jquery-1.7.2.min"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/cordova-2.5.0.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/tw/jsOAuth-1.3.6.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/tw/tw.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/tw/main.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/toast.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/spinners/spinners.js"></script>
+
+        <script type="text/javascript" charset="utf-8" src="js/api/connection.js"></script>
+        <script type="text/javascript" charset="utf-8" src="js/api/storage.js"></script>
+
+
+    </head>
+    <body>
+        <div class="header"><a onclick="navigator.app.loadUrl('http://www.aprendoaahorrar.com/', {openExternal: true});"><span class="left">aprendoa<strong>ahorrar</strong>.com</span></a><span class="right" id="loadname"></span></div>
+        <div class="menu_up">
+            <ul>
+                <li onclick="go_('user_profile.html');">Perfil</li>
+                <li onclick="">Acerca de</li>
+                <li onclick="session_kill();">Cerrar Sesión</li>                 <li>                     <input id="1" type="checkbox" class="css-checkbox" />                     <label for="1" class="css-label lite-green-check">Notificación</label>                 </li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="cloud2"></div>
+            <div class="cloud1"></div>
+            <a onclick="go_back();" class="back" ><div class="arrow"></div> Volver</a>
+            <div class="conte">
+                <p>Estado de Twitter: <span id="oauthStatus"><strong>No iniciado</strong></span><p>
+
+                <div id="stage-reading-local-store">
+                    <h4>Accesando almacenamiento local</h4>
+                    <p>Encontrado en caché los datos de autorización de Twitter. Verificación de la autorización ...</p>
+                </div>
+
+                <div id="stage-auth">
+                    <p><input type="button" id='startbutton' value="Inciar Twitter" /></p>
+                </div>
+
+                <div id="stage-data">
+                    <div id='userInfo'></div>
+                    <div data-role="controlgroup">
+                        <!--<p><input type="button" id='friends' value="Cargar amigos de Twitter" /></p>-->
+                    </div>
+                    <div id="twitterdata"></div>
+
+                    <div id="tweet_msg">
+                        <span id="textcount"></span>
+                        <textarea id="tweettextarea" rows="7" style="width: 99%;"></textarea>
+                        <p><input type="button" id='tweet' onclick="tweet();" value="Tweet!"></p>
+                    </div>
+                    <hr />
+                    <p><input type="button" data-inline="true" id='cancel' value="Cerrar sesión de Twitter"></p>	
+                </div>
+
+                <div data-role="page" data-theme="b" id="page-dialog-confirm">
+                    <div data-role="header">
+                        <h1>Confirmar Usuario</h1>
+                    </div>
+                    <div data-role="content" data-theme="c">
+                        <div id="dialog-confirm-text"></div>
+                        <div style="text-align: center;">
+                            <a class="btn_addfee" id="confirm-user" data-theme="b">Continuar</a>       
+                            <a class="btn_addfee" id="cancel-user" data-theme="c">Cancelar</a>   
+                        </div>
+                    </div>	
+                </div> <!-- /page-dialog-confirm -->
+
+                <div data-role="page" data-theme="b" id="page-dialog-tweet">
+                    <div data-role="header" data-theme="d">
+                        <h1>Confirmar Tweet</h1>
+                    </div>
+                    <div data-role="content" data-theme="c">
+                        <div id="dialog-tweet-text"></div><br />
+                        <div style="text-align: center;">
+                            <a class="btn_addfee" id="confirm-tweet" data-theme="b">Tweetear</a>       
+                            <a class="btn_addfee" id="cancel-tweet" data-theme="c">Cancelar</a>    
+                        </div>
+                    </div>
+                </div> <!-- /page-dialog-tweet -->
+
+
+            </div>
+            <div class="menu">
+                <span><a onclick="go_('goal_list.html');"><img src="images/metas_des.png" />Mis metas</a></span>
+                <span><a onclick="go_('blog_tips.html');"><img src="images/tips.png" />Tips</a></span>
+                <span><a onclick="go_('blog_news.html');"><img src="images/blog.png" />Blog</a></span>
+                <span class="act"><a onclick="share_menu();"><img src="images/compartir-over.png" />Compartir</a></span>
+                <span><a onclick="qualify();"><img src="images/calificar_des.png" />Calificar</a></span>
+            </div>
+
+        </div> <!-- /page-home -->
+        <!-- Menu (outside mobile framework) -->
+        <div id="share">
+            <div class="clo" onclick="share_menu();">
+                <span class="fontawesome-double-angle-down"></span>
+            </div>
+            <ul class="dos_columnas">
+                <li><a onclick="share_twitter();"><span class="fontawesome-twitter-sign" style="color: #4099FF;"></span>Twitter</a></li>
+                <li><a onclick="share_facebook();"><span class="fontawesome-facebook-sign" style="color: #3B5998;"></span>Facebook</a></li>
+                <li><a onclick="search_phone();"><span class="fontawesome-phone-sign" style="color: #FFBF00;"></span>Contactos Teléfono</a></li>
+                <li><a onclick="share_email();"><span class="fontawesome-envelope-alt" style="color: #C92922;"></span>Correo Electrónico</a></li>
+            </ul>
+            <ul class="cloios">
+                <li class="cancelios" style="color: white;" onclick="share_menu();">Cancelar</li>
+            </ul>
+        </div>
+        <div id='spinner'><!-- spinner will go here --></div>
+        <div id="toast" style="opacity: 0;"></div>
+    </body>
+</html>

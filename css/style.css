@@ -1,0 +1,811 @@
+/* 
+    Document   : style
+    Created on : 17/04/2013, 01:50:05 PM
+    Author     : fredo
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+@import url(fontawesome.css);
+[class*="fontawesome-"]:before {
+    font-family: 'FontAwesome', sans-serif;
+}
+
+html {
+    height: 100%; 
+    margin: 0px; 
+    padding: 0px;
+}
+
+body {
+    margin: 0px; 
+    padding: 0px;
+    font-family: 'Arial';
+    color: #2c2c64;
+    height: 100%;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+a, div, span {
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 35px;
+    color: #2c2c64;
+    -webkit-box-shadow: 0 0 4px #aaa;
+    box-shadow: 0 0 4px #aaa;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 15px 20px 0 20px;
+    background: -webkit-gradient(linear, left top, left 45, from(rgb(193,198,35)), color-stop(6%, rgb(227,232,41)), to(rgb(193,198,35)));
+
+}
+
+.header span.left {
+    width: 100%;
+    float: left;
+    width: 25%;
+    text-align: left;
+    margin: 0 auto;
+
+}
+
+#init .header span.right {
+    float: right;
+    margin-right: 30px;
+}
+
+.header span.right {
+    float: right;
+    margin-right: 20px;
+}
+
+.header span.right a {
+    color: #2c2c64;
+}
+
+.header span.right .btn_close {
+    padding: 15px 42px 20px 8px;
+    background: url(../images/opt_icon.png) no-repeat;
+    margin-left: 10px;
+}
+
+.header span.right .btn_close:active {
+    background: url(../images/opt_icon_over.png) no-repeat;
+}
+
+.header span.right .btn_closactive {
+    background: url(../images/opt_icon_over.png) no-repeat;
+}
+
+.menu_up{
+    position: fixed;
+    right: 0;
+    top: 50px;
+    background-color: #060668;
+    display: none;
+    z-index: 10;
+}
+
+.menu_up ul{
+    color: #FFF;
+    list-style: none;
+    margin: 10px 20px;
+    padding: 0;
+}
+
+.menu_up ul li{
+    margin: 10px;
+    font-weight: normal;
+}
+
+.btn_addfee {
+    margin-top: 30px;
+    background-color: #060668;
+    color: #fff;
+    padding: 8px 18px 8px 18px;
+    border-radius: 8px;
+    background: -webkit-gradient(linear, left top, left 25, from(rgb(6,6,104)), color-stop(0%, rgb(83,83,151)), to(rgb(6,6,104)));
+    font-size: 14px;
+}
+
+.content{
+    margin: 51px 0 0 0;
+    min-height: 102%;
+    padding-bottom: 70px;
+    background-image: url(../images/no-city.jpg);
+    background-repeat: repeat-x;
+    background-position: 0% 100%;
+    background-attachment: fixed;
+    -webkit-background-attachment: fixed;
+}
+
+.log {
+    padding-bottom: 0px;
+    margin-top: 0px;
+    min-height: 100%;
+}
+
+.conte{
+    margin: -10px 20px 20px 20px;
+}
+
+.conte span.description{
+    color: #474747;
+    font-size: 13px;
+}
+
+.conte label{
+    font-size: 13px;
+}
+
+#login {
+    margin-top: 70px;
+}
+
+#register {
+    margin-top: 40px;
+}
+
+.cloud1{
+    width: 140px;
+    height: 61px;
+    background-image: url(../images/nube1.png);
+    background-repeat: no-repeat;
+}
+
+.cloud2{
+    margin: 0px 20px 0 0;
+    width: 140px;
+    height: 61px;
+    float: right;
+    background-image: url(../images/nube2.png);
+    background-repeat: no-repeat;
+}
+
+h2{
+    font-size: 20px;
+}
+
+.facebook-before {
+    background-color: #3B5998;
+    color: #FFF;
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    width: 10%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background: gradient(linear, left top, left 25, from(#455C8B), color-stop(6%, #3B5998), to(#455C8B));
+    background: -webkit-gradient(linear, left top, left 25, from(#455C8B), color-stop(6%, #3B5998), to(#455C8B));
+}
+
+.facebook {
+    background-color: #3B5998;
+    border: none;
+    color: #f4f4f4;
+    cursor: pointer;
+    height: 40px;
+    font-size: 18px;
+    width: 90%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background: gradient(linear, left top, left 25, from(#455C8B), color-stop(6%, #3B5998), to(#455C8B));
+    background: -webkit-gradient(linear, left top, left 25, from(#455C8B), color-stop(6%, #3B5998), to(#455C8B));
+}
+
+.twitter-before {
+    background-color: #4099FF;
+    color: #FFF;
+    display: block;
+    float: left;
+    height: 40px;
+    line-height: 45px;
+    text-align: center;
+    width: 10%;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    background: -webkit-gradient(linear, left top, left 25, from(#4099FF), color-stop(6%, #32ACE1), to(#4099FF));
+}
+
+.twitter {
+    background-color: #4099FF;
+    border: none;
+    color: #f4f4f4;
+    cursor: pointer;
+    font-size: 18px;
+    height: 40px;
+    width: 90%;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background: -webkit-gradient(linear, left top, left 25, from(#4099FF), color-stop(6%, #32ACE1), to(#4099FF));
+}
+
+input[type="button"], input[type="submit"] {
+    background-color: #e3e829;
+    border: none;
+    color: #2c2c64;
+    font-weight: bold;
+    cursor: pointer;
+    height: 40px;
+    font-size: 18px;
+    width: 100%;
+    border-radius: 8px;
+    background: -webkit-gradient(linear, left top, left 50, from(#C9CD29), color-stop(4%, #E3E829), to(#C9CD29));
+}
+
+input[type="text"], input[type="email"], input[type="password"], input[type="number"]{
+    height: 40px;
+    font-size: 15px;
+    padding: 5px;
+    margin: 10px 0px;
+    width: 97%;
+    border-radius: 8px;
+    border: none;
+    -webkit-box-shadow: 0px 0px 0px #b0b0b0,
+        0px 0px 0px #b0b0b0,
+        -2px 2px 5px #b0b0b0,
+        2px 2px 5px #b0b0b0;
+    box-shadow: 0px 0px 0px #b0b0b0,
+        0px 0px 0px #b0b0b0,
+        -2px 2px 5px #b0b0b0,
+        2px 2px 5px #b0b0b0;
+    background-image: gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+    background-image: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(4%, #EEEEEE), to(#FFFFFF));
+}
+
+/*select {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px outset;
+    height: 40px;
+    font-size: 15px;
+    padding: 5px;
+    color: #2c2c64;
+    background-image: gradient(linear, left top, left 25, from(#FFFFFF), color-stop(40%, #EEEEEE), to(#CCC));
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(40%, #EEEEEE), to(#CCC));
+}*/
+
+/* The CSS */
+select {
+    font-size: 15px;
+    width: 100%;
+    height: 40px;
+    padding: 5px;
+    margin: 10px 0px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:8px;
+    -webkit-box-shadow: 0px 0px 0px #b0b0b0, 0px 0px 0px #b0b0b0, -2px 2px 5px #b0b0b0, 2px 2px 5px #b0b0b0;;
+    -moz-box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
+    box-shadow: 0px 0px 0px #b0b0b0, 0px 0px 0px #b0b0b0, -2px 2px 5px #b0b0b0, 2px 2px 5px #b0b0b0;
+    background: #f8f8f8;
+    color: #2c2c64;
+    border:none;
+    outline:none;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+    background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(40%, #EEEEEE), to(#CCC));
+}
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    select {
+        font-size: 15px;
+        padding-right:18px;
+        background: -webkit-gradient(linear, left top, left 25, from(#FFFFFF), color-stop(40%, #EEEEEE), to(#CCC));}
+}
+
+form label {
+    position:relative;
+}
+
+form label:after {
+    content: '▲';
+    font:20px "Consolas", monospace;
+    color:#aaa;
+    -webkit-transform:rotate(180deg);
+    -moz-transform:rotate(180deg);
+    transform:rotate(180deg);
+    right: 8px; 
+    top: -3px;
+    padding: 0 0 2px;
+    position:absolute;
+    pointer-events:none;
+}
+
+form label:before {
+    content:'';
+    right: 10px; 
+    top: 0px;
+    width: 20px; 
+    height: 20px;
+    position: absolute;
+    pointer-events: none;
+    display: block;
+}
+/* Fin ... */
+
+.content>a {
+    font-size: 20px;
+}
+
+.arrow {
+    width:0px;
+    height:0px;
+    border-top: 10px solid transparent;
+    border-right: 8px solid #2c2c64;
+    border-bottom: 10px solid transparent;
+    display: inline-block;
+    margin-right: 12px;
+    margin-left: 21px; 
+    vertical-align: middle;
+}
+
+
+#toast {
+    position: fixed;
+    top: 80%;
+    left: 50%;
+    width: auto;
+    border: 2px solid #EEE;
+    background-color: #020202;
+    padding: 10px 20px;
+    color: #F9F9F9;
+    text-align: center;
+    border-radius: 4px;
+    opacity: 0.8;
+    transition: opacity 0.5s ease-out;
+    -webkit-transition: opacity 0.5s ease-out;
+    font-family: Arial, cursive, sans-serif;
+}
+
+#succes_plan, #show_plan {
+    display: none;
+}
+
+.content ul{
+    padding: 0;
+}
+
+.content ul li{
+    background-color: #FAFAFA;
+    padding: 15px;
+    margin: 3px;
+    list-style: none;
+    font-weight: lighter;
+    -webkit-transition: all 0.3s linear;
+    transition: all 1s linear;
+    -webkit-box-shadow: 0px 0px 0px #b0b0b0,
+        0px 0px 0px #b0b0b0,
+        0px 0px 0px #b0b0b0,
+        1px 1px 1px #b0b0b0;
+    box-shadow: 0px 0px 0px #b0b0b0,
+        0px 0px 0px #b0b0b0,
+        0px 0px 0px #b0b0b0,
+        1px 1px 1px #b0b0b0;
+    opacity: 1;
+    border-radius: 5px;
+    background: -webkit-gradient(linear, left top, left 50, from(#F0F0F0), color-stop(4%, #FAFAFA), to(#F0F0F0));
+}
+
+.content ul li.goal_full {
+    color: #009733;
+}
+
+.content ul li span.arrowr {
+    width:0px;
+    height:0px;
+    border-top: 10px solid transparent;
+    border-left: 8px solid #A6A6A6;
+    border-bottom: 10px solid transparent;
+    display: inline-block;
+    margin-right: 5px;
+    float: right;
+}
+
+.content ul li span.check {
+    width: 23px;
+    height: 20px;
+    display: inline-block;
+    float: right;
+    background: url(../images/check.png) no-repeat;
+}
+
+#list_fees table {
+    border-radius: 7px;
+    margin-bottom: 5px;
+    text-align: center;
+    border-spacing: 0;
+    border: 1px solid;
+    background-color: #FFF;
+}
+
+#list_fees table tr:first-child td:nth-child(1) {
+    border-top-left-radius: 5px;
+}
+
+#list_fees table tr:first-child td:last-child {
+    border-top-right-radius: 5px;
+}
+
+#1list_fees table tr:nth-child(2) td:nth-child(1) {
+    font-size: 20px;
+}
+
+#1list_fees table tr:nth-child(2) td:nth-child(1), #list_fees table tr:nth-child(2) td:nth-child(2), #list_fees table tr:nth-child(4) td:nth-child(1) {
+    border-right: 1px solid;
+}
+
+#list_fees table tr:nth-child(1) {
+    font-size: 12px;
+    background-color: #060668;
+    color: #FFF;
+    border:0;
+}
+
+#list_fees table tr {
+    display:none;
+}
+
+#list_fees table tr:first-child, #list_fees table tr:last-child, #list_fees table tr:nth-child(2) {
+    display: table-row;
+}
+
+#1list_fees table tr:nth-child(even) {
+    font-size: 14px;
+    color:#060668;
+    border:0;
+}
+
+#close{
+    float: right;
+}
+
+#requests, #no_sync, #invalid_reg, #invalid_data, #invalid_login {
+    padding: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    background-color: #f9edbe;
+    border: 1px solid #f0c36d;
+    display: none;
+}
+
+#show_plan{
+    color: #4F4F4F;
+}
+
+#show_plan h2{
+    color: #2c2c64;
+    margin-bottom: 4px;
+}
+
+#show_plan .typ{
+    font-size: 13px;
+}
+
+#show_plan .tbl_info td:first-child { 
+    font-weight: bold;
+}
+
+#show_plan .tbl_info tr:last-child, #show_plan .tbl_fees tr:first-child { 
+    font-weight: bold;
+    /*color: #2c2c64;*/
+}
+
+#show_plan .tbl_fees{
+    text-align: center;
+}
+
+#show_plan .tbl_fees td {
+    border-bottom: 1px solid #2c2c64;
+    padding: 3px 0;
+}
+
+#show_plan .tbl_fees tr:last-child td {
+    border-bottom: none;
+}
+
+#show_plan .finish {
+    background-color: #2c2c64;
+    background: -webkit-gradient(linear, left top, left 25, from(rgb(6,6,104)), color-stop(0%, rgb(83,83,151)), to(rgb(6,6,104)));
+    padding: 10px;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 14px;
+    border-radius: 10px;
+    float: left;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+#show_plan .finish strong:first-child {
+    font-size: 16px;
+}
+
+#show_plan .arrofinishtop {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 9px solid rgb(83,83,151);
+    float: left;
+    margin-left: 20px;
+    z-index: 100;
+}
+
+#show_plan a{
+    color: #2c2c64;
+    font-weight: bold;
+}
+
+/* Inicio Checkbox */
+
+input[type=checkbox].css-checkbox {
+    display:none;
+}
+
+input[type=checkbox].css-checkbox + label.css-label {
+    padding-left:20px;
+    height:15px;
+    width: 25%;
+    display:inline-block;
+    line-height:15px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:15px;
+    vertical-align:middle;
+    cursor:pointer;
+    font-size: 13px;
+}
+
+input[type=checkbox].css-checkbox:checked + label.css-label {
+    background-position: 0 -15px;
+}
+
+.css-label{
+    background-image:url(../images/lite-green-check.png);
+}
+
+/*specific classes related to Checkbox skins*/
+
+.lite-green-check{
+    background-image:url(../images/lite-green-check.png);
+}
+
+input[type=checkbox].css-checkbox.med + label.css-label.med {
+    padding-left:22px;
+    height:17px; 
+    display:inline-block;
+    line-height:17px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:15px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox.med:checked + label.css-label.med {
+
+    background-position: 0 -17px;
+}
+input[type=checkbox].css-checkbox.sme + label.css-label.sme {
+    padding-left:22px;
+    height:16px; 
+    display:inline-block;
+    line-height:16px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:15px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox.sme:checked + label.css-label.sme{
+
+    background-position: 0 -16px;
+}
+input[type=checkbox].css-checkbox.lrg + label.css-label.lrg {
+    padding-left:22px;
+    height:20px; 
+    display:inline-block;
+    line-height:20px;
+    background-repeat:no-repeat;
+    background-position: 0 0;
+    font-size:15px;
+    vertical-align:middle;
+    cursor:pointer;
+}
+
+input[type=checkbox].css-checkbox.lrg:checked + label.css-label.lrg{
+
+    background-position: 0 -20px;
+}
+
+/* Fin Checkbox */
+
+.menu{
+    position: fixed;
+    width:100%;
+    bottom: 0;
+    left:0;
+    height: 60px;
+    background-color:#fefefe;
+    background-image: linear-gradient(bottom, #ADADAA 5%, #FFFFFF 80%);
+    background-image: -webkit-linear-gradient(bottom, #ADADAA 5%, #FFFFFF 80%);
+    background: -webkit-gradient(linear, left top, left 70, from(#ADADAA), color-stop(0%, #FFFFFF), to(#ADADAA));
+    color:#FFFFFF;
+    text-align: center;
+}
+
+.menu span{
+    width: 15%;
+    color: #4f4f4f;
+    font-size: 11px;
+    border-right: 1px ridge;
+    height: 40px;
+    text-align: center;
+    display: inline-block;
+    padding: 5px;
+    margin-top: 5px;
+    vertical-align: middle;
+    line-height: 10px;
+}
+
+.menu span:last-child{
+    border-right: none;
+}
+
+.menu span a img{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    height: 30px;
+}
+
+.menu span.act a{
+    color: #07074A;
+}
+
+.opt_menu{
+    text-align: center;
+    color: #07074A;
+    font-size: 13px;
+}
+
+.opt_menu span{
+    display: inline-block;
+    width: 32%;
+}
+
+.opt_menu span a img{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    height: 30px;
+}
+
+/* Compartir Android */
+#share {
+    display:none;
+    position:fixed;
+    bottom:0;
+    z-index:9999;
+    /*background-color: #FFF;*/
+    color: #CCCCCC;
+    width: 100%;
+    opacity: 1;
+    border-top: 1px solid #999;
+}
+
+.android {
+    background: -webkit-gradient(linear, left top, left 25, from(rgba(200,200,200,0.8)), color-stop(0%, rgba(220,220,220,0.8)), to(rgba(255,255,255,0.8)));
+}
+
+.android .cloios {
+    display: none;
+}
+
+#share ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-bottom:10px; 
+    text-align: center; 
+    width: 100%;
+}
+
+#share ul li {
+    color: #444;
+    line-height: 1.5em; 
+    float: left; 
+    display: inline;
+    margin-bottom: 10px;
+}
+
+#share ul li a {
+    /*color: #444;*/
+    font-size: 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/*Compartir iOS*/
+.ios {
+    background: -webkit-gradient(linear, left top, left 25, from(rgba(0,0,0,0.8)), color-stop(0%, rgba(70,70,70,0.8)), to(rgba(0,0,0,0.8)));
+}
+
+.ios ul li a {
+    color: #FFF;
+    font-size: 20px;
+}
+
+.ios .dos_columnas li { 
+    color: white;
+    width: 93%;
+    height: 30px;
+    overflow: visible;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    padding-top: 8px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    box-shadow: 0 1px 0 rgba(255,255,255, 0.25), inset 0 1px 1px rgba(0,0,0, 0.2);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255, 0.25), inset 0 1px 1px rgba(0,0,0, 0.2);
+    border: 1px solid rgba(0,0,0, 0.4);
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .5);
+    background: -webkit-linear-gradient(top, #89A0BE 0%,#5877A2 50%,#486A9A 51%,#4A6C9B 100%);
+}
+
+.cancelios {
+    width: 93%;
+    height: 30px;
+    overflow: visible;
+    margin-top: 10px;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    padding-top: 2.2px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid #000;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .5);
+    background: -webkit-linear-gradient(top, #6A6A6A 0%,#313131 49%,black 50%,black 100%);
+} 
+
+.ios .dos_columnas li a span {
+    display: none;
+}
+
+.ios .clo {
+    color: transparent;
+}
+
+.clo{
+    text-align: center;
+    font-size: 20px;
+}
+
+.dos_columnas li { width:50%;} 
+.tres_columnas li { width:33.333%; } 
+.cuatro_columnas li { width:25%; } 
+.cinco_columnas li { width:16.666%; }
+
+.dos_columnas li a span { display: block;}
+.dos_columnas li a span {
+    font-size: 30px;
+}
+
+#more_fees {
+    color: #2c2c64;
+}
+
+.fees {
+    text-align: center;
+}
